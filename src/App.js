@@ -15,11 +15,9 @@ function App() {
   return (
     <div className="App">
 			<h1>Hello React</h1>
-				<h1>
-					{value}
-				</h1>
+			<Component list={arr} handlerClick={handlerClick}/>
+			
 
-			<button onClick={handlerClick}>add</button>
     </div>
   );
 }
