@@ -11,7 +11,6 @@ function App() {
     <div className="App">
 			<h1>Hello React</h1>
 			<Component list={arr} handlerClick={handlerClick}/>
-			
 
     </div>
   );
