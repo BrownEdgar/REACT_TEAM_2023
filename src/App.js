@@ -1,16 +1,22 @@
 import Component from "./components/Component";
+import React, { useState } from 'react';
 
 
 function App() {
-	const arr = ['html', 'css', 'Java Script', 'React.js', 'Node.js', 'Python' ];
+	const [value, setvalue] = useState(1)
 
 	const handlerClick = () => { 
-		console.log("click");
+
+		setvalue(value + 1)
+		setvalue(value + 2)
+
 	 }
+
   return (
     <div className="App">
 			<h1>Hello React</h1>
 			<Component list={arr} handlerClick={handlerClick}/>
+			
 
     </div>
   );
