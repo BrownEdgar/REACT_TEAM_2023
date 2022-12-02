@@ -3,14 +3,13 @@ import Usersid from './Usersid'
 
 export default function App() {
 	const [data, setdata] = useState([])
-	const [id, setid] = useState(data)
+	const [id, setid] = useState(7)
 	useEffect(() => {
 		fetch('https://jsonplaceholder.typicode.com/todos')
 			.then(response => response.json())
 			.then(data => setdata(data))
 	}, [])
 
-	
 	return (
 		<div >
 			<Usersid user={data}/>
