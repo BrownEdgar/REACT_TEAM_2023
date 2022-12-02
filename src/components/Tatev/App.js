@@ -15,8 +15,8 @@ function App() {
 		<div>
 			<h1>{count}</h1>
 		<button onClick={plusClick}>+ 1</button>
-		<button onClick={minusClick}>- 1</button>
 		<button onClick={resetClick}>0</button>
+		<button onClick={minusClick}>- 1</button>
 		</div>
 	)
 }
