@@ -1,22 +1,17 @@
 import React  from 'react'
+import s from './Component.module.css'
 
-
-function Component({list,foo}) {
-
-  function deleteID(id){
-    let x = list.filter(elem => elem.id !== id)
-    foo(x)
- }
+function Component({ list,deleteElement }) {
 
 return (
-    <div className='section'>
-      <div className='list'>
-        {list.map(elem => {
-          return <p key={elem.id}>
-            id {elem.id} : {elem.title} </p>
-        })}
-        </div>
-        <button onClick={() => deleteID(5)}>Delete</button>
+    <div className={s.myTodos}>
+         {list.map((elem,index) => {
+          return <div className={s.element} key={elem.toString()}>
+            <p>{elem}</p>
+            <button className={s.delete} onClick={() => deleteElement(elem)}>Delete</button>
+          </div>
+         })}
+
     </div>
   )
 }
