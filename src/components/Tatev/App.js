@@ -3,17 +3,22 @@ import Usersid from './Usersid'
 
 export default function App() {
 	const [data, setdata] = useState([])
-	const [id, setid] = useState(7)
+	
 	useEffect(() => {
-		fetch('https://jsonplaceholder.typicode.com/todos')
+		fetch('https://jsonplaceholder.typicode.com/todos?_limit=5')
 			.then(response => response.json())
 			.then(data => setdata(data))
 	}, [])
 
+	const handleDelete = () => { 
+			const f = data.filter(todo => todo.id !== 4);
+		setdata(f)
+	 }
+	
 	return (
 		<div >
 			<Usersid user={data}/>
-			<button>delete</button>
+			<button onClick={handleDelete}>delete</button>
 		</div>
 	)
 }

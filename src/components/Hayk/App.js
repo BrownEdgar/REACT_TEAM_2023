@@ -5,6 +5,7 @@ import './App.css'
 
 function App(){
     const [data,setData] = useState([])
+		
     useEffect( () => {
         fetch(' https://jsonplaceholder.typicode.com/todos?_limit=10')
         .then(response => response.json())
@@ -13,7 +14,7 @@ function App(){
 
      return (
      <div>
-        <Component list={data} foo={setData}/>
+				 <Component list={data} setList={setData}/>
     </div>
    )
 }
