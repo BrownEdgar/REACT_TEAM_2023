@@ -6,7 +6,7 @@ export default function Users({ data, handelDelete }) {
 		<div className='users'>
 			{
 				data.map(elem => {
-					return <User user={elem} key={elem.id} handelDelete={handelDelete}/> 
+					return <User user={elem} key={elem.id}/> 
 				})
 			}
 		</div>

@@ -8,15 +8,18 @@ export const App = () => {
   const [data, setData] = useState([])
   const getData = ()  => {
     axios.get('https://jsonplaceholder.typicode.com/users')
-        .then(response => setData(response.data.data))
-        .catch(error => setData(error))
+        .then(response => {
+					console.log(response);
+					setData(response.data)
+				})
+			.catch(error => console.log(error))
   } 
   useEffect(() =>{
     getData()
   }, [])
     return (
     <div>
-      <Users />
+				<Users data={data}/>
     </div>
   )}
 

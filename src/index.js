@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './components/Arayik/App';
+import App from './components/EDGAR/App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

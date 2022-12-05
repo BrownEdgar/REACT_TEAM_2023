@@ -6,7 +6,7 @@ export default function Users({data}) {
     <div className='users'>
       {
         data.map(elem => {
-            return <User  user={elem.username} key={elem.id}/>
+            return <User  user={elem} key={elem.id}/>
         })
       }
     </div>
