@@ -1,31 +1,39 @@
-import React,  { useState, useEffect } from 'react'
+import React,  { useState, useEffect } from 'react';
+import Users from "./Users";
+import axios from 'axios';
 
 
 import './App.css'
+import Component from './Component'
 
 export default function App() {
 	const [data, setdata] = useState([])
-	const [value, setvalue] = useState(0)
+	const [arr, setArr] = useState(["a", "b", "c"])
 
-		
-	 
-	
+const handelDelete = (id) => { 
+		const f = data.filter(user => user.id !== id)
+		setdata(f)
+ }
+
+	const getData = () => {
+		axios.get('https://reqres.in/api/users')
+			.then(response => setdata(response.data.data))
+			.catch(err => console.log(err))
+	}
+
 	useEffect(() => {
-		fetch(' https://jsonplaceholder.typicode.com/posts?_limit=2')
-			.then(response => response.json())
-			.then(data => setdata(data))
-	}, [])// miayn componenti cnveluc
+		getData()
+	}, [])
 
 	return (
-		<div >
-			{/* <User user={data} /> */}
-			{
-				data.length 
-					? <pre> {JSON.stringify(data, null, 1)}</pre>
-					: <h1>push the button to get data</h1>
-			}
-			<h2>{value}</h2>
-			<button onClick={() => setvalue(value + 1)}>add</button>
+		<div className='box'>
+			<Users data={data} handelDelete={handelDelete}/>
+			<Component>
+				<h1>Lorem ipsum dolor sit.</h1>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis quae commodi qui. Perferendis optio ab ex? Maxime voluptate itaque consequatur non. Tenetur velit omnis quo quis sit nulla dolorum pariatur.</p>
+				<button>Read more</button>
+			</Component> 
 		</div>
 	)
 }
+

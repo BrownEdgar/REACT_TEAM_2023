@@ -1,25 +1,24 @@
-import React, {useState} from 'react'
+import React,  { useState, useEffect } from 'react'
+import Usersid from './Usersid'
 
-function App() {
-	const [count, setcount] = useState(0);
-	const plusClick = () => {
-		setcount(count + 1)
-	}
-	const minusClick = () => {
-		setcount(count - 1)
-	}
-	const resetClick = () => {
-		setcount(0)
-	}
+export default function App() {
+	const [data, setdata] = useState([])
+	
+	useEffect(() => {
+		fetch('https://jsonplaceholder.typicode.com/todos?_limit=5')
+			.then(response => response.json())
+			.then(data => setdata(data))
+	}, [])
+
+	const handleDelete = () => { 
+			const f = data.filter(todo => todo.id !== 4);
+		setdata(f)
+	 }
+	
 	return (
-		<div>
-			<h1>{count}</h1>
-		<button onClick={minusClick}>- 1</button>
-		<button onClick={resetClick}>0</button>
-		<button onClick={plusClick}>+ 1</button>
+		<div >
+			<Usersid user={data}/>
+			<button onClick={handleDelete}>delete</button>
 		</div>
 	)
 }
-
-export default App;
-
