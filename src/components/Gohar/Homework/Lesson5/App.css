@@ -1,0 +1,46 @@
+*,
+*::before,
+*::after{
+	box-sizing: border-box;
+}
+body {
+	background-color: rgb(250, 232, 35);
+}
+
+.users {
+	display: flex;
+	padding: 2px;
+	flex-flow: row wrap;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+}
+
+.users > article {
+	flex: 1 0 33%;
+	text-align: center;
+	padding: 4px;
+	border-radius: 12px;
+	box-shadow: 18px 16px 56px 10px rgba(0,0,0,0.75);
+	-webkit-box-shadow: 18px 16px 56px 10px rgba(0,0,0,0.75);
+	-moz-box-shadow: 18px 16px 56px 10px rgba(0,0,0,0.75);
+	background-color: #ccc;
+	position: relative;
+}
+
+.users > article > p {
+	margin-left: 10px;
+	font-size: 20px;
+	font-weight: 600;
+}
+.users > article > img {
+	border-radius: 20px;
+	padding: 1px;
+	border: 2px solid black;
+}
+
+.delete-btn {
+	top: 15px;
+	right: 10px;
+	
+}
