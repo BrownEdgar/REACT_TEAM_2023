@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 
-export default function MainTable({ data, handleDelete }) {
+export default function MainTable({ data, handleDelete,}) {
 	return (
 			<table>
 					<tr>
