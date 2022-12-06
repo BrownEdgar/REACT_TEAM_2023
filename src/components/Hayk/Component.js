@@ -8,7 +8,7 @@ return (
          {list.map((elem,index) => {
           return <div className={s.element} key={elem.toString()}>
             <p>{elem}</p>
-            <button className={s.delete} onClick={() => deleteElement(elem)}>Delete</button>
+						<button className={s.delete} onClick={() => deleteElement(index)}>Delete</button>
           </div>
          })}
 

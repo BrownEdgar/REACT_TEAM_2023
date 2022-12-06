@@ -10,10 +10,6 @@ const handelDelete = (language) => {
   setArr(f)
 }
 
-
-
-
-
   return (
     <div>
         <Language list={arr} handelDelete={handelDelete}/>
