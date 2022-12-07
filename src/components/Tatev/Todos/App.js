@@ -23,7 +23,7 @@ function App() {
         <hr></hr>
         {
                 arr.map(el => {
-                    return <div>{el} <button onClick={()=>func('a')}>x</button></div>
+                    return <div>{el} <button onClick={()=>func(el)}>x</button></div>
                 })
         }
     </div>
