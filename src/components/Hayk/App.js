@@ -3,6 +3,7 @@ import React, { useState,useEffect } from "react"
 import Component from   './Component'
 
 
+
 function App(){
 const [data,setData] = useState([])
 let [lod,setLod] = useState(null)
