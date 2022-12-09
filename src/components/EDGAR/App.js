@@ -4,6 +4,8 @@ import axios from 'axios';
 
 
 import './App.css'
+import TableLoader from "./Loaders/TableLoader";
+import { BulletList } from 'react-content-loader'
 
 
 export default function App() {
@@ -25,18 +27,15 @@ const handelDelete = (id) => {
 	}
 
 	useEffect(() => {
-
 			getData()
-
 	}, [])
 
 	return (
 		<div className='box'>
 			<h1>Lorem ipsum dolor sit amet.</h1>
-			
 		{
-				loading 
-				? <h1>Loading...</h1>
+				!loading 
+					? <TableLoader />
 				: <Users data={data} handelDelete={handelDelete} />
 		}
 		</div>
