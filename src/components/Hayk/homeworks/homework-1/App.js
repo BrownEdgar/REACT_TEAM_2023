@@ -14,7 +14,7 @@ function App(){
 
      return (
      <div>
-				 <Component list={data} setList={setData}/>
+		<Component list={data} setList={setData}/>
     </div>
    )
 }

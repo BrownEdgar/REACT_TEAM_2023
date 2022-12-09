@@ -1,17 +1,16 @@
 import React  from 'react'
-import s from './Component.module.css'
+// import PropTypes from 'prop-types'
 
-function Component({ list,deleteElement }) {
 
+function Component({list}) {
+console.log(list)
 return (
-    <div className={s.myTodos}>
-         {list.map((elem,index) => {
-          return <div className={s.element} key={elem.toString()}>
-            <p>{elem}</p>
-						<button className={s.delete} onClick={() => deleteElement(index)}>Delete</button>
-          </div>
-         })}
-
+    <div>
+      {list.map((elem,index) =>{
+        return <ul key={index}>
+          <li>{elem.name}</li>
+        </ul>
+      })}
     </div>
   )
 }
@@ -19,3 +18,12 @@ return (
 
 
 export default Component
+
+
+// Component.propsType = {
+//   obj: PropTypes.shape({
+//     name:PropTypes.bool,
+//     age:PropTypes.number,
+//     isFrom:PropTypes.string,
+//   })
+// } 
