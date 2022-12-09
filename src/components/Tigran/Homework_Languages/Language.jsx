@@ -7,10 +7,10 @@ export default function Language({ list, handelDelete}) {
     <div>
       <h1 className={l.title}>My Todos</h1>
     <div className={l.my_todos}>
-      {list.map((elem) => {
-        return <div className={l.language} key={Date.now()}>
+      {list.map((elem,index) => {
+        return <div className={l.language} key={index}>
           <p>{elem}</p>
-          <button className={l.delete_btn} onClick={() => handelDelete()}>Delete</button>
+          <button className={l.delete_btn} onClick={() => handelDelete(elem)}>Delete</button>
         </div>
       })}
     </div>

@@ -17,7 +17,6 @@ function App(){
      return (
      <>
 		<Component list={data} deleteElement={deleteElement}/>
-       
     </>
    )
 }

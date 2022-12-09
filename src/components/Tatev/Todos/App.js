@@ -1,16 +1,16 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import Component from '../../Tatev/Todos/Component'
 
 import '../../Tatev/Todos/App.css'
 
 function App() {
-    const [data,setdata] = useState([{name:'html'},{name:'CSS'},{name:'Javas Script'}, {name:'React.js'}, {name:'Node.js'}, {name:'Python'}]);
+	const [data, setdata] = useState([{ name: 'html' }, { name: 'CSS' }, { name: 'Javas Script' }, { name: 'React.js' }, { name: 'Node.js' }, { name: 'Python' }]);
 
-    const [arr,setArr] = useState(['a','b','c'])
-    const handelDelete = (name) => {
-        const foo = data.filter(elem => elem.name !== name)
-        setdata(foo)
-    }
+	const [arr, setArr] = useState(['a', 'b', 'c'])
+	const handelDelete = (name) => {
+		const foo = data.filter(elem => elem.name !== name)
+		setdata(foo)
+	}
 
     const func = (i) => {
         const f = arr.filter(e => e !== i)
