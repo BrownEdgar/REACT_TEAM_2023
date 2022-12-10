@@ -19,13 +19,15 @@ useEffect(() =>{
   }
 },[])
 
-function saveUser(e){
+function saveTodo(e){
  e.preventDefault()
  let newValue = e.target[0].value;
- let clone = [...data];
- clone.push(newValue)
- setdata(clone)
- localStorage.setItem('todos',JSON.stringify(clone))
+ if(newValue.length > 0){
+  let clone = [...data];
+  clone.push(newValue)
+  setdata(clone)
+  localStorage.setItem('todos',JSON.stringify(clone))
+}
 }
  
 return (
@@ -44,8 +46,8 @@ return (
               </li>
           })}
           </ul>
-          <form className='Container-content_form' onSubmit={saveUser}>
-            <input type='text' />
+          <form className='Container-content_form' onSubmit={saveTodo}>
+            <input type='text' placeholder='Enter item' />
             <input type='submit' value='Submit' />
           </form>
         </div>
