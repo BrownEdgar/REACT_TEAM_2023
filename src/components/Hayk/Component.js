@@ -4,13 +4,51 @@ import './App.scss'
 function Component() {
 const [data, setdata] = useState([])
 
+function deleteToDo(ind){
+  let filterData = data.filter((elem,index) => {
+    return index !== ind
+  })
+  setdata(filterData)
+  localStorage.setItem('todos',JSON.stringify(filterData))
+}
+
+useEffect(() =>{
+  if(localStorage.getItem('todos') !== null){
+    let x = JSON.parse(localStorage.getItem('todos'));
+      setdata(x)
+  }
+},[])
+
+function saveUser(e){
+ e.preventDefault()
+ let newValue = e.target[0].value;
+ let clone = [...data];
+ clone.push(newValue)
+ setdata(clone)
+ localStorage.setItem('todos',JSON.stringify(clone))
+}
  
 return (
    <div className='Container'>
-    <form className='Container-form'>
-      
-
-    </form>
+        <div className='Container-content'>
+          <div className='Container-content_title'>
+            <h1>You have {data.length} Todos</h1>
+          </div>
+          <ul className='Container-content_list'>
+            {data.map((elem,index)=>{
+            return <li key={index}>
+              <span>{elem}</span>  
+              <div>
+              <button onClick={() => deleteToDo(index)}>X</button>
+              </div>
+              </li>
+          })}
+          </ul>
+          <form className='Container-content_form' onSubmit={saveUser}>
+            <input type='text' />
+            <input type='submit' value='Submit' />
+          </form>
+        </div>
    </div>
   )
 }
