@@ -1,17 +1,17 @@
-import React  from 'react'
-// import PropTypes from 'prop-types'
+import React , { useState,useEffect } from 'react'
+import './App.scss'
 
+function Component() {
+const [data, setdata] = useState([])
 
-function Component({list}) {
-console.log(list)
+ 
 return (
-    <div>
-      {list.map((elem,index) =>{
-        return <ul key={index}>
-          <li>{elem.name}</li>
-        </ul>
-      })}
-    </div>
+   <div className='Container'>
+    <form className='Container-form'>
+      
+
+    </form>
+   </div>
   )
 }
 
@@ -20,10 +20,3 @@ return (
 export default Component
 
 
-// Component.propsType = {
-//   obj: PropTypes.shape({
-//     name:PropTypes.bool,
-//     age:PropTypes.number,
-//     isFrom:PropTypes.string,
-//   })
-// } 
