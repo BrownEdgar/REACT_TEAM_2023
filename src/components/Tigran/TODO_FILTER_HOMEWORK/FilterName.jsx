@@ -2,13 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 
-export default function FilterName({ handleSubmit, message, user, specialuser, getUserByName}) {
+export default function FilterName({ handleSubmit, specialuser}) {
   return (
     <div className='Main'>
         <h1 className='Main__Title'>Search for a person by typing their name</h1>
-        <form className='Main__Form'>
+        <form className='Main__Form' onSubmit={handleSubmit}>
             <input type="text" placeholder="Write his name" />
-            <input type="submit" value="Search"  onSubmit={handleSubmit} />
+            <input type="submit" value="Search" />
         </form>
         {
             specialuser.length
@@ -22,7 +22,7 @@ export default function FilterName({ handleSubmit, message, user, specialuser, g
 }
 FilterName.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
-  getUserByName: PropTypes.func.isRequired,
+  getUserByName: PropTypes.func,
   specialuser: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number,
     name: PropTypes.string,
@@ -37,10 +37,11 @@ FilterName.propTypes = {
     lng: PropTypes.string,
     phone: PropTypes.string,
     website: PropTypes.string,
-    company: PropTypes.string,
-    name: PropTypes.string,
-    catchPhrase: PropTypes.string,
+    company: PropTypes.arrayOf(PropTypes.shape({
+      name: PropTypes.string,
+      catchPhrase: PropTypes.string,
     bs: PropTypes.string,
+    })),
   }))
   
 }
