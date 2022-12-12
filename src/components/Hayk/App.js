@@ -1,27 +1,8 @@
-import React, { useState } from "react"
-import Component from "./Component"
-
+import React from 'react'
+import Component from   './Component'
 
 function App(){
-   const [data,setData] = useState(['html','css','Java Script','React.js','Node.js','Phyton'])
- 
-   function deleteElement(element){
-    
-    let newData = data.filter(elem => {
-        return elem !== element
-    })
-    
-    setData(newData)
-   }
-  
-     return (
-     <>
-		<Component list={data} deleteElement={deleteElement}/>
-    </>
-   )
+	return <Component />
 }
-
-
-
 
 export default App

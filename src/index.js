@@ -1,12 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-
-import App from './components/Tigran/TODO_FILTER_HOMEWORK/App';
-
-
+import App from './components/EDGAR/Todo/App';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <App />
 );
-
-
