@@ -5,15 +5,24 @@ function App() {
 
 	const clickPlus = () => {
 		setvalue((prevValue) => {
-			return prevValue + 6
+			return prevValue + 6 
 		}) 
 		setvalue((prevValue) => {
-			return prevValue + 5
+			if (prevValue < 10) {
+				return prevValue + 5
+			}else{
+				return 10
+			}
 		})
 	}
 
 	const clickMinus = () => {
 		setvalue(value - 1)
+		setvalue(value - 1)
+
+		let x = 7
+		x= 15
+		console.log(x);
 	}
 
 

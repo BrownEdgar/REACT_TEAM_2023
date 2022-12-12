@@ -12,27 +12,23 @@ function App() {
 		setdata(foo)
 	}
 
-	const func = (i) => {
-		const f = [...arr]
-		f.splice(i, 1)
-		setArr(f)
-	}
-	return (
-		<div className='App'>
-			<h1>My Todos</h1>
-			<Component data={data} handelDelete={handelDelete} />
-			<hr />
-			{
-				arr.map((el, index) => {
-					return <div key={index}>
-						{el}
-						<button onClick={() => func(index)}>x</button>
-					</div>
-				})
-			}
-		</div>
-
-	)
+    const func = (i) => {
+        const f = arr.filter(e => e !== i)
+        setArr(f)
+    }
+  return (
+    <div className='App'>
+        <h1>My Todos</h1>
+        <Component data={data} handelDelete={handelDelete}/>
+        <hr></hr>
+        {
+                arr.map(el => {
+                    return <div>{el} <button onClick={()=>func(el)}>x</button></div>
+                })
+        }
+    </div>
+    
+  )
 }
 
 export default App
