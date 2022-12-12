@@ -18,7 +18,7 @@ const handleSubmit = (e) => {
 
 
 useEffect(() => {
-    axios.get("https://jsonplaceholder.typicode.com/todos")
+    axios.get("https://jsonplaceholder.typicode.com/users")
     .then(response => setUser(response.data))
     .catch(err => console.error("User is not found"))
 
@@ -32,19 +32,10 @@ const getUserByName = name => {
 useEffect(() => {
     getUserByName(message)
 }, [message])
-
-
-
-
-
-
-
-
-
-
-  return (
+    
+    return (
     <div>
-        <FilterName handleSubmit={handleSubmit} message={message} user={user} specialuser={specialuser} getUserByName={getUserByName} />
+        <FilterName handleSubmit={handleSubmit} specialuser={specialuser}  />
     </div>
   )
 }
