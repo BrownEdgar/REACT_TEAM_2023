@@ -9,11 +9,11 @@ const [task, settask] = useState([
         {id: "2", name: "task 2"},
         {id: "3", name: "task 3"}, 
 ])
-const [message, setmessage] = useState("")
+
 
 const handleSubmit = (e) => {
     e.preventDefault()
-    setmessage(e.target.elements[0].value)
+
     const newTask = {
         id: Date.now().toString(),
         name: e.target.elements[0].value,

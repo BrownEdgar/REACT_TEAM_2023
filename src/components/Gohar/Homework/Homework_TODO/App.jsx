@@ -7,9 +7,9 @@ export default function App() {
   const [list, setList] = useState([]);
 
   const handleSubmit = (e) => {
+    e.preventDefault();
     setList((oldData) => [...oldData, data]);
     setData("");
-    e.preventDefault();
   };
 
   const handleDelete = (id) => {
@@ -18,7 +18,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <div className="wrapper">
+      <div className="Wrapper">
         <div className="wrapper-frame">
           <div className="wrapper-frame-header">
             <h1 className="wrapper-frame-header-title">You have {list.length} Todos</h1>
@@ -30,7 +30,7 @@ export default function App() {
                 <button onClick={() => handleDelete(id)}    className="wrapper-form-button">Delete</  button>
               </div>
             ))}
-            <form onSubmit={(e) => handleSubmit(e)} className="wrapper-form">
+            <form onSubmit={handleSubmit} className="wrapper-form">
               <input type="text" className="input" placeholder="Enter Item" value={data}  onChange={(e) => setData(e.target.value)}/>
               <button className="wrapper-form-button">Submit</button>
             </form>

@@ -13,11 +13,13 @@ body {
     height: auto;
     background-color: rgba(128, 128, 128, 0.787);
     margin:200px auto;
+
     &__Title {
         padding: $main-size;
         text-align: center;
         color: rgb(0, 0, 0);
     }
+
     &__Table {
         border-collapse: collapse;
         font-variant: small-caps;
