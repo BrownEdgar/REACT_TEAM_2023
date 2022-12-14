@@ -1,25 +1,13 @@
-import Component from "./components/Component";
-import React, { useState } from 'react';
+import React from 'react'
+import Myform from './components/Myform'
 
+import "./App.scss"
 
-function App() {
-	const [value, setvalue] = useState(1)
-
-	const handlerClick = () => { 
-
-		setvalue(value + 1)
-		setvalue(value + 2)
-
-	 }
-
-  return (
-    <div className="App">
-			<h1>Hello React</h1>
-			<Component list={arr} handlerClick={handlerClick}/>
-			
-
-    </div>
-  );
+export default function App() {
+	return (
+		<div className='Container'>
+			<h1>formik</h1>
+			<Myform />
+		</div>
+	)
 }
-
-export default App;
