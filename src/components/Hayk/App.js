@@ -1,14 +1,10 @@
 import React from 'react'
-import Component from   './Component'
+import Form from   './Form'
 
 
 
 function App(){
-     return (
-     <>
-    <Component />
-    </>
-   )
+     return <Form />
 }
 
 
