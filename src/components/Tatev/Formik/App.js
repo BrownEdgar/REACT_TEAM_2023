@@ -1,10 +1,13 @@
 import React from 'react'
 import MyFormik from './MyFormik'
 
-export default function App() {
+import './App.scss'
+
+function App() {
   return (
-    <div>
+    <div className='Container'>
         <MyFormik />
     </div>
   )
 }
+export default App
