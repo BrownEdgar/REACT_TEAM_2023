@@ -1,74 +1,32 @@
-import React ,{ useState} from 'react'
-import './App.scss'
+import React  from 'react'
+import { useFormik } from 'formik'
 
 function Form() {
- const [val, setval] = useState({
-   value:'',
-   errorMesege:'dasdasdas',
-   isValid:true,
-   validate: {
-      minLenght:8,
-      numberTwoLenght:true,
-      startWithUpper:true
+ const formik = useFormik({
+   initialValues: {
+      name:'',
+      password:'',
+      policy:false
    }
- })
-
- const validateFunc = (value,options) => {
-  let result = true;
-
-
-  if(options.minLenght){
-   result = value.length > options.minLenght
+  })
+  
+   return    <form className='myForm'>
    
-  }
-
-//   if(options.numberTwoLenght){
-
-//       result = !value.match(/\d/g) 
-   
-//   }
-if(options.startWithUpper) {
-   result = !!value.match(/[A-Z]/g);
-}
-console.log(result)
-
-
-
-
-
-
-
-
-
-
-
-
-   return result 
- }
-
-
- 
- function handleChange(e){
-   
-     let isValid = validateFunc(e.target.value,val.validate);
-
-     if(isValid){
-      setval({...val, value:e.target.value, isValid:true})
-     }else{
-      setval({...val, value:e.target.value, isValid:false})
-     }
-   
- }
- 
-  return (
-    <div className='Container'>
-     <form className='Container-Form'>
-         <label  htmlFor='password'>Password</label>
-         <input type='password' id='password' value={val.value} onChange={handleChange}/>  
-          {!val.isValid && <p> {val.errorMesege}</p>}
-     </form>        
-    </div>
-   )
+      <div>
+         <label htmlFor='name'>Username</label>
+         <input type='text' id='name' name='name' />
+      </div>
+      <div>
+         <label htmlFor='password'>Password</label>
+         <input type='password' id='password' name='password' />
+      </div>
+      <div>
+         <input type='checkbox' id='policy' name='policy' />
+         <label className='label-box' htmlFor='policy'>Lorem</label>
+      </div>
+      <input type='submit' value='Submit' />
+    
+ </form>
  
  
 
