@@ -1,8 +1,13 @@
 import React from 'react'
-import Component from   './Component'
+import Form from   './Form'
+
+// import './App.scss'
 
 function App(){
-	return <Component />
+ return <div>
+   <h1>formik</h1>
+   <Form />
+ </div>
 }
 
 export default App
