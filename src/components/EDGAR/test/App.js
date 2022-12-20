@@ -1,45 +1,49 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
+import List from './List'
 
-function App() {
-	const [value, setvalue] = useState(0)
+import "./App.scss"
 
-	const clickPlus = () => {
-		setvalue((prevValue) => {
-			return prevValue + 6 
-		}) 
-		setvalue((prevValue) => {
-			if (prevValue < 10) {
-				return prevValue + 5
-			}else{
-				return 10
-			}
-		})
-	}
+export default function App() {
+	const [data, setData] = useState( [
+		{
+			id:1,
+			name: '🍔',
+			price: 30,
+			amount: 10,
+		},
+		{
+			id:2,
+			name: '🍨',
+			price: 20,
+			amount: 3,
+		},
+		{
+			id:3,
+			name: '🍿',
+			price: 10,
+			amount: 5,
+		},
+		{
+			id:4,
+			name: '🍵',
+			price: 5,
+			amount: 9,
+		},
+		{
+			id: 5,
+			name: 'Pizza',
+			price: 7,
+			amount: 9,
+		},
+	])
 
-	const clickMinus = () => {
-		setvalue(value - 1)
-		setvalue(value - 1)
-
-		let x = 7
-		x= 15
-		console.log(x);
-	}
-
-
+	// 1․ հաշվել ընդհանուր ապրանքների գինը
+	// 2․ փոխանցել id,սրից հետո պետք է այդ id-ով ապրանքի ՛amount՛ արժեքը փոքրացնել 1-ով
+	// 3․ ստեղծել ֆորմա 3 input-ով, որոնց մեջ կարելի է գրել համապատասխան value-ը և ավելացնել մեր զանգվածի մեջ
 
 	return (
-		<div className="App">
-			<h1>{value}</h1>
-			<div className="btn">
-
-				<button onClick={clickMinus}> - 1 </button>
-
-				<button onClick={clickPlus}> + 1 </button>
-
-			</div>
-
+		<div className='Container'>
+			<List data={data} />
 		</div>
 	)
 }
-
-export default App
