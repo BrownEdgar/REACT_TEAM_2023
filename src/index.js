@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-import App from './components/EDGAR/Router6/App'
+import App from './components/EDGAR/'
 import { BrowserRouter as Router } from 'react-router-dom'
 
 
