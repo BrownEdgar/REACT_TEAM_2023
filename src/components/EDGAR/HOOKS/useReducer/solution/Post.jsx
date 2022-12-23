@@ -8,7 +8,7 @@ const Post = () => {
 
   const handleFetch = () => {
     dispatch({ type: "FETCH_START" })
-    fetch("https://jsonplaceholder.typicode.com/posts/50")
+    fetch("https://jsonplaceholder.typicode.com/posts/1")
       .then(res => {
         console.log(res)
         if (res.status === 200) {
@@ -18,7 +18,6 @@ const Post = () => {
         }
       })
       .then(data => {
-
         dispatch({ type: "FETCH_SUCCESS", payload: data })
       })
       .catch(err => {
