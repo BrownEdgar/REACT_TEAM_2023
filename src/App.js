@@ -1,25 +1,37 @@
-import Component from "./components/Component";
-import React, { useState } from 'react';
+
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { CHANGE_COUNT, CHANGE_NAME, ADD_ELEMENT } from "./redux/actionTypes";
+
 
 
 function App() {
-	const [value, setvalue] = useState(1)
+	const count = useSelector(state => state.count);
+	const name = useSelector(state => state.name);
+	const arr = useSelector(state => state.arr);
 
-	const handlerClick = () => { 
+	const dispatch = useDispatch()
+	const handleClick = () => {
+		dispatch({ type: CHANGE_COUNT })
+	}
 
-		setvalue(value + 1)
-		setvalue(value + 2)
+	const handleClick2 = () => {
+		dispatch({ type: CHANGE_NAME })
+	}
+	const handleClick3 = () => {
+		dispatch({ type: ADD_ELEMENT })
+	}
 
-	 }
-
-  return (
-    <div className="App">
-			<h1>Hello React</h1>
-			<Component list={arr} handlerClick={handlerClick}/>
-			
-
-    </div>
-  );
+	return (
+		<div className="App">
+			<h1>count: {count}</h1>
+			<h1>Name: {name}</h1>
+			<h1>arr: {JSON.stringify(arr,null, 1)}</h1>
+			<button onClick={handleClick}>change count</button>
+			<button onClick={handleClick2}> change Name</button>
+			<button onClick={handleClick3}> change Name</button>
+		</div>
+	);
 }
 
 export default App;
