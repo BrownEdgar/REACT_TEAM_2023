@@ -1,5 +1,5 @@
-import { createStore } from "redux"
-import { CHANGE_COUNT, CHANGE_NAME, ADD_ELEMENT } from "./actionTypes"
+import { createStore } from "redux";
+import { CHANGE_COUNT, CHANGE_NAME, ADD_ELEMENT } from "./actionTypes";
 
 const initialState = {
     name: "Redux",
