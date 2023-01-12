@@ -1,0 +1,25 @@
+.Copntainer{
+    display: block;
+    justify-content: center;
+    border: 1px solid black;
+    width: 40%;
+    margin: auto;
+    height: 100%;
+    border-radius: 20px;
+    &-Post{
+        border-radius: 20px;
+        color: green;
+    }
+    &-Error{
+        border-radius: 20px;
+        color: red;
+    }
+    &-Btn {
+        border-radius: 20px;
+        color: green;
+        background-color: aqua;
+        border: 0px;
+        width: 50px;
+        height: 50px;
+    }
+}
